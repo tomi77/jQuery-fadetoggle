@@ -4,12 +4,12 @@
  * @author Tomasz Jakub Rup
  */
 (function($){
-	$.fn.fadeToggle = function(speed, callbackIn, callbackOut) {
+	$.fn.fadeToggle = function(speed, callback) {
 		return this.each(function() {
-			if($(this).css('display') == 'none') $(this).fadeIn(speed, callbackIn);
+			if($(this).css('display') == 'none') $(this).fadeIn(speed, callback);
 			else $(this).fadeOut(speed, function() {
 				$(this).css('display','none');
-				if(callbackOut != undefined) callbackOut();
+				if(callback != undefined) callback();
 			});
 		});
 	}
